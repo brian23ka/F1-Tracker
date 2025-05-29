@@ -1,0 +1,135 @@
+# F1 Tracker
+
+A command-line application to manage Formula 1 teams, drivers, races, and results.  
+Built with Python and SQLAlchemy ORM, this tool allows you to add, update, delete, and view F1 data in a simple interactive CLI.
+
+---
+
+## Features
+
+- **Teams:** Add, update, delete, and list F1 teams.
+- **Drivers:** Manage drivers, assign them to teams, and track their stats.
+- **Races:** Add new races, update race details, and delete races.
+- **Results:** Enter and view race results for each driver.
+- **Standings:** View team and driver standings, and detailed race results.
+- **Seed Data:** Comes with pre-populated teams, drivers, races, and results for quick start.
+
+---
+
+## Project Structure
+
+```
+F1_Tracker/
+├── cli/
+│   ├── menu.py        # Main CLI logic and menus
+│   └── views.py       # (Optional) Modular view functions
+├── models/
+│   ├── driver.py      # Driver model
+│   ├── team.py        # Team model
+│   ├── race.py        # Race model
+│   └── result.py      # Result model
+├── db/
+│   └── f1.db          # SQLite database (auto-created)
+├── database.py        # SQLAlchemy session/engine setup
+├── seed.py            # Script to populate initial data
+└── README.md          # This file
+```
+
+---
+
+## Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone <your-repo-url>
+cd F1_Tracker
+```
+
+### 2. Install Dependencies
+
+Requires Python 3.8+.
+
+```bash
+pip install sqlalchemy tabulate colorama 
+```
+
+### 3. Initialize the Database
+
+If you haven’t already, create the database tables and seed data:
+
+```bash
+python seed.py
+```
+
+### 4. Run the Application
+
+```bash
+python cli/menu.py
+```
+
+---
+
+## Usage
+
+- **Main Menu:**  
+  Choose to manage Teams, Drivers, Races, or View Standings/Results.
+
+- **Teams Menu:**  
+  List, add, update, or delete teams.
+
+- **Drivers Menu:**  
+  List, add, update, or delete drivers. Assign drivers to teams.
+
+- **Races Menu:**  
+  List, add, update, or delete races.  
+  When adding a race, you’ll be prompted to enter results for each driver.
+
+- **View Menu:**  
+  - Team Standings: See teams ranked by points.
+  - Driver Standings: See drivers ranked by points.
+  - Race Results: Select a race to view detailed results.
+
+---
+
+## Models
+
+- **Team:** Name, base, principal, championships, points, drivers, results.
+- **Driver:** Name, age, nationality, titles, points, role, team, results.
+- **Race:** Name, circuit, location, date, laps, distance, weather, results.
+- **Result:** Race, driver, team, position, points, laps completed, status.
+
+---
+
+## Customization
+
+- **Add More Data:**  
+  Edit `seed.py` or use the CLI to add more teams, drivers, races, and results.
+
+- **Database:**  
+  Uses SQLite by default (`db/f1.db`).  
+  You can change the database URL in `database.py`.
+
+---
+
+## Troubleshooting
+
+- If you get errors about missing tables, run `python seed.py` to initialize the database.
+- If you want to reset all data, delete `db/f1.db` and re-run `seed.py`.
+
+---
+
+## License
+
+MIT License
+
+---
+
+## Credits
+
+- Built with [SQLAlchemy](https://www.sqlalchemy.org/) and [tabulate](https://pypi.org/project/tabulate/).
+- Formula 1 is a trademark of Formula One Licensing BV. This project is for educational purposes only.
+
+---
+
+Enjoy tracking your F1 season!0
