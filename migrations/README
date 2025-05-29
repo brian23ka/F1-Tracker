@@ -53,6 +53,10 @@ Requires Python 3.8+.
 ```bash
 pip install sqlalchemy tabulate colorama 
 ```
+## initialize virtual environment 
+```bash
+pipenv shell
+```
 
 ### 3. Initialize the Database
 
