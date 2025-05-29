@@ -72,6 +72,7 @@ python cli/menu.py
 
 ## Usage
 
+
 - **Main Menu:**  
   Choose to manage Teams, Drivers, Races, or View Standings/Results.
 
